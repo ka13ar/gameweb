@@ -1,0 +1,671 @@
+/*--------------------------------------------------
+	[scss file: /assets/scss/theme/_product.scss]
+		+ Style for product in product page
+---------------------------------------------------*/
+.minner-sidebar{
+	.widget{
+		margin-bottom: 0px;
+	}
+	@media(max-width: $screen-sm-max){
+		margin-top: 30px;
+	}
+}
+.woocommerce{
+	#yith-quick-view-modal.open .yith-wcqv-wrapper{
+		height: 440px;
+	}
+	.yith-wcqv-wrapper{
+		.primary_block{
+			.product-type-external,
+			.product-type-simple {
+				.cart{
+					float: none !important;
+				}
+
+				.description{padding-bottom: 10px;}
+			}
+			.product-type-variable,
+			.product-type-grouped{
+				.cart{
+					padding: 0 0; border-top: none;
+				}
+			}
+			.entry-img{
+				.inner {
+					.owl-stage-outer{
+						border: 1px solid #dbdbdb; border-right: none; overflow: hidden; margin: 0 5px;
+						&:before{
+							height: 100%; width: 1px; content: ''; background: #dbdbdb; position: absolute;
+							right: 0px; top: 0px; z-index: 2;
+						}
+					}
+					> span.onsale{
+						z-index: 3;
+					}
+				}
+			}
+		}
+	}
+	.product-type-variable,
+	.product-type-grouped{
+		.primary_block{
+			.cart{
+				padding: 0 0; border-top: none;
+			}
+		}
+	}
+	.primary_block{
+		.inner{
+			position: relative;
+			> span{
+				&.onsale{
+					position: absolute; top: 10px; left: 10px; z-index: 1;
+					padding: 7px 20px; color: #FFF; font-size: 125%; @include border-radius(18px);
+					background: #7ebf38;
+					right: 10px; left: auto;
+				}
+			}
+		}
+		.entry-summary{
+			@media(max-width: $screen-xs-max){
+				margin-top: 30px;
+			}
+		}
+		.images{
+			.quickview-image{
+				display: block;
+			}
+			.woocommerce-main-image{display: block; border: 1px solid #dbdbdb}
+		}
+		.sns-thumbnails{
+			margin: 10px -5px 0; position: relative;
+			.thumbnails{
+				a{
+					padding: 0 5px; overflow: hidden; display: block;
+					
+					img{
+						width: auto;
+						@include transition(all 0.3s ease 0s); border: 1px solid #dfdfdf;
+						&:hover{
+							border-color: $color1;
+						}
+					}
+					
+				}
+			}
+		}
+		.navslider{
+			.prev,
+			.next{
+				display: block;
+				@include square(28px); @include border-radius(100%);
+				text-align: center;
+				border: 1px solid #dedede;
+				@include transition(all 0.25s ease); 
+				font-size: 0px; position: absolute; cursor: pointer;
+				top: 50%; left: -9px; margin-top: -14px;
+				background: #FFF; z-index: 1;
+				&:before {
+					content: '';
+					position: absolute;
+					width: 60%;
+					height: 1px;
+					background: #dedede;
+					top: 50%;
+					@include transition(all 0.25s ease);
+					left: 20%;
+				}
+				&:hover {
+					border-color: $color1;
+					&:before,
+					&:after {
+						background: $color1;
+					}
+				}
+				&.prev{
+					right: -9px; left: auto;
+					&:after{
+						content: '';
+						position: absolute;
+						width: 60%;
+						height: 1px;
+						background: #dedede;
+						top: 50%;
+						@include rotate(-90deg);
+						@include transition(all 0.25s ease);
+						left: 20%;
+					}
+					&:hover {
+						&:before,
+						&:after {
+							background: $color1;
+						}
+					}
+				}
+			}
+		}
+		// Rating
+		.woocommerce-product-rating{
+			//margin-bottom: 10px;
+			.star-rating{
+				margin: 0 5px 0 0; 
+			}
+		}
+		// Price
+		.price{
+			padding: 0px; 
+			> .amount{
+				font-size: 200%;
+			}
+			del{font-size: 14px;}
+		}
+		// Short description
+		.description{
+			margin-bottom: 10px;
+			@include clearfix();
+		}
+		// addthis_toolbox
+		.addthis_toolbox{
+			margin-bottom: 20px;
+			@include clearfix();
+		}
+		// Form cart
+		.cart{
+			margin: 0 0 15px 0;
+			border-top: 1px solid #e9e9e9; padding: 20px 0 0;
+			label{
+				float: left; margin: 0 10px 0 0; color: #666; line-height: 44px;
+			}
+			.quantity{
+				float: left;
+				margin: 0 10px 0 0;
+				.qty{
+					@include square(44px);
+					text-align: center;
+					border-radius: 50%;
+					padding: 5px;
+					border: 1px solid #e9e9e9 !important;
+				}
+			}
+			.single_add_to_cart_button{
+				position: relative;
+				display: inline-block;
+				height: 44px;
+				border-radius: 50px;
+				padding: 5px 25px 5px 44px;
+				line-height: 34px;
+				border: none;
+				background: #c0c0c0;
+				color: $white;
+				font-size: 116.7%;
+				@include transition(all 0.3s linear);
+				&:after {
+					content: "";
+					position: absolute;
+					top: 50%;
+					left: 5px;
+					background: url("../img/action-llist.png") no-repeat -3px -343px;
+					@include square(44px);
+					margin-top: -25px;
+				}
+				&:hover{
+					background-color: $color1;
+				}
+			}
+		}
+		// Wishlist, compare
+		.compare,
+		.yith-wcwl-add-to-wishlist a{
+			@include inline-block();
+			color: #c0c0c0;
+			@include square(44px);
+			border: 1px solid #e9e9e9; 
+			@include border-radius(12px);
+			line-height: 42px; font-size: 0px; padding: 0; text-align: center;
+			&:before{
+				font-family: FontAwesome; font-size: 18px;
+			}
+			&.compare{ margin-left: 6px;
+				&:before{
+					content: '\f0ec';
+				}
+			}
+			&.yith-wcqv-button{ margin-left: 6px;
+				&:before{
+					content: '\f002';
+				}
+			}
+			.blockUI.blockOverlay{
+				@include border-radius(11px); overflow: hidden; background: #FFF !important; opacity: 0.6;
+				line-height: normal;
+			}
+			&:hover {
+				color: #FFF;
+				background: $color1; border-color: $color1;
+			}
+		}
+		.show{display: inline-block !important}
+		.clear{display: none !important}
+		.yith-wcwl-add-to-wishlist { position: relative;
+			margin: 0 0; @include square(44px);
+			display: inline-block;
+			.feedback{display:none !important}
+			.ajax-loading{
+				position: absolute;
+				margin: 0 0 !important; width: 100% !important; height: 100% !important;
+				left: 0% !important; top: 0% !important;
+				@include border-radius(11px); overflow: hidden;
+				background: #FFF; opacity:0.6;
+				&:before{
+					position: absolute;
+					left: 50%; margin-left: -12px; line-height:48px;
+					-webkit-animation: spin 1s ease-in-out infinite;
+				    -moz-animation: spin 1s ease-in-out infinite;
+				    -o-animation: spin 1s ease-in-out infinite;
+				    animation: spin 1s ease-in-out infinite;
+				    background: none;
+					font-family: FontAwesome; font-size:24px; content:"\f110";//content: "\f1ce";
+					color: rgba(0, 0, 0, 0.75);
+				}
+			}
+			a{
+				&:before{
+					content: '\f004';
+				}
+			}
+		}
+		// Meta
+		.product_meta{
+			@include clearfix();
+			border-top: 1px solid #e9e9e9;
+			margin: 20px 0; padding: 15px 0 0;
+			.sku_wrapper,
+			.tagged_as,
+			.posted_in{
+				@include clearfix();
+				font-weight: bold; color: #666;
+				> *{font-weight: normal; color:$color;}
+			}
+		}
+		// Product sidebar
+		.widget{
+			.widget-title {
+				font-size: 180%;
+			}
+			ul.shop-policy {
+				margin: 0 0;
+				color: inherit;
+				li {
+					position: relative;
+					min-height: 60px;
+					padding-left: 60px;
+					padding-top: 10px;
+					@include transition(all 0.25s ease);
+					&:hover {
+						color: $color1;
+						.fa {
+							color: $white;
+							background: $color1;
+							border-color: $color1;
+						}
+					}
+				}
+				.fa {
+					color: inherit;
+					border: 1px solid;
+					border-color: #dfdfdf;
+					@include square(48px);
+					border-radius: 50%;
+					line-height: 46px;
+					font-size: 20px;
+					text-align: center;
+					position: absolute;
+					top: 50%;
+					margin-top: -24px;
+					left: 0;
+					padding-left: 5px;
+					@include transition(all 0.25s ease);
+				}
+			}
+		}
+	}
+	.sns-quick-view{
+		.imgs-quick{position: relative;margin: 0 -5px;
+			.images{
+				span.quickview-image{margin: 0 5px;}
+			}
+		}
+		.summary{
+			.inner{
+				padding-left: 10px; padding-right: 10px;
+			}
+		}
+	}
+}
+// product tab
+#sns_tab_products {
+	margin: 50px 0;
+	ul.nav-tabs {
+		@include clearfix();
+		@include ulclear();
+		position: relative; 
+		z-index: 1;
+		border: none;
+		> li {
+			display: block;
+			margin: 0;
+			float: left;
+			margin-bottom: -1px;
+			&:first-child, &.tabdrop + li {
+				> a {
+					border-width: 1px;
+				}
+			}
+			&.tabdrop {
+			}
+			&:hover, &.active {
+				> a {
+					background: $color1;
+					border-color: $color1;
+					color: #fff;
+				}
+			}
+			&.tabdrop {
+				> a {
+
+				}
+			}
+			> a {
+				color: #666;
+				@include transition(all 0.2s ease-out);
+				position: relative; 
+				font-size: 135%;
+				background: none;
+				@include inline-block();
+				position: relative;
+				padding: 8px 20px;
+				border: 1px solid #e9e9e9;
+				border-width: 1px;
+				border-radius: 10px 10px 0 0;
+				margin: 0 8px 0 0;
+			}
+		}
+		.dropdown{
+			cursor: pointer;
+			a{ margin: 0 0; cursor: pointer;}
+			ul.dropdown-menu{
+				padding: 0 0;
+			}
+		}
+	}
+	.tab-content { 
+		border: 1px solid #e9e9e9;
+		padding: 25px 25px 20px; 
+		position: relative;
+		margin: 0;
+		overflow: hidden;
+		h2, h3, h4 {
+			text-transform: uppercase;
+			margin-top: 0;
+			font-weight: normal;
+		}
+		h2{
+			font-size: 130%;
+		}
+		h3 {
+			font-size: 120%;
+		}
+		h4 {
+			font-size: 100%;
+		}
+		#reviews{
+			h2{
+				margin-bottom: 20px;
+			}
+			h3{
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+}
+
+.sns-product-tabs,
+.sns-products,
+.cross-sells,
+.related,
+.upsells.products {
+	@include clearfix();
+	clear: both;
+	margin: 0 -15px 50px;
+	h2{
+		text-align: center; font-size: 183.3%; text-transform: uppercase; margin: 0 0; padding: 0 15px;
+		span{position: relative; display: inline-block;padding: 0 0 10px;
+			&:before{position: absolute;content: ""; left: 0px; bottom: -14px; height: 1px; width: 100%; background: #ebebeb;}
+		}
+	}
+	.navslider{
+		position: relative;
+		width: 61px; 
+		height: 28px; 
+		display: block; 
+		@include center-block();
+		background: #FFF;
+
+		.next,
+		.prev{ 
+			@include transition(all 0.2s ease-out); 
+			cursor: pointer;
+			margin: 0 0 0 5px;
+			width: 28px; height: 28px; 
+			border: 1px solid #dfdfdf; 
+			@include border-radius(100%); 
+			position: absolute;
+			top: 0px; 
+			right: 0px; 
+			background: url("../img/ico-pager.png") no-repeat -78px 6px;
+			i{display: none;
+				&:before{display:none}
+			}
+			&:hover{
+				background-position: -52px 6px; 
+				background-color: $activeColor; 
+				border-color: $activeColor;
+			}
+		}
+		.prev{
+			left: 0px; 
+			right: auto; 
+			background-position: 0px 6px; 
+			margin: 0 0;
+			&:hover{
+				background-position: -26px 6px;
+			}
+		}
+	}
+	.pretext{
+		width: 70%; margin: 6px auto 20px;
+		@include center-block();
+		text-align: center;
+		@media (max-width: $screen-sm-max) {width: 90%}
+	}
+	ul.products,
+	ul {
+		@include ulclear();
+		float: none;
+		li{padding: 17px 15px 0; float: left}
+		.owl-item{
+			li{
+				float: none;
+			}
+		}
+	}
+	&.has-nav{
+		.prdlist-content{padding-top: 15px;}
+	}
+}
+
+.cross-sells{
+	// margin-top: 20px;
+	h2{
+		font-size: 150%;
+	}
+}
+.sns-product-tabs{
+	h2.wpb_heading{
+		margin-bottom: 15px;
+		span{
+			&:before{bottom:0px;}
+		}
+	}
+	.nav-tabs{
+		@include clearfix();
+		@include ulclear();
+		position: relative; 
+		z-index: 1;
+		border: none; text-align: center;
+		> li {
+			cursor: pointer;
+			position: relative;
+			background: #fff;
+			border: 1px solid #dfdfdf;
+			border-radius: 22px;
+			display: inline-block;
+			height: 44px;
+			line-height: 42px;
+			margin: 0 2.5px;
+			padding: 0 32px;
+			@include transition(all 0.2s ease-out 0s);
+			font-size: 150%; float:none;
+			&.active,
+			&:hover {
+				background: $color1;
+				border-color: $color1;
+				a {color: $white; border: none; background: none;}
+			}
+			> a {
+				color:$linkColor; border: none; background: none; margin: 0 0;
+			}
+		}
+		@media (max-width: $screen-sm-max) {
+			display: none;
+		}
+	}
+	.tabdrop{
+		@media (max-width: $screen-sm-max) {
+			display: block !important;
+			ul.dropdown-menu{
+				li{
+					padding: 0 0; display: block; float: none;
+					a{
+						display: block; padding: 3px 15px;
+					}
+				}
+			}
+		}
+	}
+	.pretext{
+		@include clearfix(); margin: 15px auto 0;
+	}
+	&.template-carousel{
+		&.pre-load{
+			.tab-pan{height: 0px; overflow: hidden;}
+		}
+		.navslider{
+			margin: 10px auto 15px;
+			.prev:before{
+				position: absolute; content: ""; width: 100px; height: 1px; background: #ebebeb;
+				top: 13px; left: -101px;
+			}
+			.next:before{
+				position: absolute; content: ""; width: 100px; height: 1px; background: #ebebeb;
+				top: 13px; left: 27px;
+			}
+		}
+	}
+	.product_list {
+		> li{
+			margin-top: 25px;
+		}
+	}
+
+}
+
+.top-hr{
+	background: $top-line-color;
+	height: 5px;
+	margin: 2px 0 31px;
+}
+.product-heading-h5{
+	color: $gray-light;
+	font-weight: 200;
+	margin: 3px 0 8px;
+	font-size: 19px;
+	font-family: $font-custom;
+}
+.box-security .product-heading-h5{
+	margin: 3px 0 -8px;
+	@media  (max-width: $screen-md-max) { //max 1199px
+	margin-bottom: 8px;
+	}
+}
+#productscategory_list .product-name,
+.accessories-block .product-name{
+	margin-bottom: 5px;
+	a{
+		font-size: 15px;
+		line-height: 18px;
+		color: $product-name-color;
+		&:hover{
+			color: $product-name-hover-color;
+		}
+	}
+}
+img{
+	max-width: 100%;
+	height: auto;
+}
+
+.yith-wcwl-share{
+	margin: 0 0 10px;
+}
+.reset_variations{
+	margin: 0 0 0 5px;
+}
+
+
+// Add effec load more for SNS Product Tabs
+.sns-woo-loadmore-wrap{
+	text-align: center; margin-top: 35px;
+	.sns-woo-loadmore{
+		font-size: 150%; padding: 8px 24px; @include border-radius(24px);
+		&.loaded{
+			border-color: $color1; background-color: $color1; color: #FFF; cursor: text;
+		}
+	}
+}
+.item-animate {
+    @include opacity(0);
+    position: relative;
+}
+.play {
+    .item-animate {
+        @include opacity(1);
+        @include animation-play-state(running);
+    }
+}
+.slideBottom.play .item-animate { @include animation(slideBottom 600ms ease both); }
+.slideLeft.play .item-animate { @include animation(slideLeft 600ms ease both); }
+.slideRight.play .item-animate { @include animation(slideRight 600ms ease both); }
+.bounceIn.play .item-animate { @include animation(bounceIn 600ms ease both); }
+.bounceInRight.play .item-animate { @include animation(bounceInRight 600ms ease both); }
+.zoomIn.play .item-animate { @include animation(zoomIn 600ms ease both); }
+.zoomOut.play .item-animate { @include animation(zoomOut 600ms ease both); }
+.pageRight.play .item-animate { @include animation(pageRight 600ms ease both); }
+.pageLeft.play .item-animate { @include animation(pageLeft 600ms ease both); }
+.pageTop.play .item-animate { @include animation(pageTop 600ms ease both); }
+.pageBottom.play .item-animate { @include animation(pageBottom 600ms ease both); }
+.starwars.play .item-animate { 
+	@include animation(starwars 600ms ease-out both); 
+	@include transform-origin(50% 50%);
+}

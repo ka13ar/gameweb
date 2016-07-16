@@ -1,0 +1,156 @@
+/*--------------------------------------------------
+	[scss file: assets/scss/theme/_toolbar_list.scss]
+		+ Style for toolbar on listing page of WooCommerce
+---------------------------------------------------*/
+.woocommerce-pagination {
+	margin: 0 0 20px; text-align: center;
+	.page-numbers {
+		margin: 10px 10px 0 0; list-style:none; padding: 0; display:inline-block;
+		li { display: inline;
+			> span, > a {
+				@include border-radius(100%);
+				height: 28px;
+				min-width: 28px; line-height:28px;
+				text-align: center;
+				margin: 0 2px; float: left;
+				color: $color1; border: 1px solid #ddd; display:inline-block;
+				&:focus,
+				&:hover,
+				&.current{
+					border-color: $color1;
+					color: $white;
+					background: $color1;
+					.fa {
+						color: $white;
+					}
+				}
+			}
+			.fa {
+				color: #afafaf;
+				font-size: 18px;
+				height: 26px;
+				line-height: 26px;
+				text-align: center;
+				width: 16px;
+				margin: 0 0 0 2px;
+			}
+			a.prev{
+				.fa{
+					margin: 0 2px 0 0;
+				}
+			}
+		}
+	}
+}
+
+.toolbar {
+	border: 1px solid #dfdfdf;
+	height: 50px;
+	margin: 0 0 10px;
+	padding: 0;
+	&.toolbar-bottom{
+		margin-bottom: 40px; position: relative;
+	}
+	.mode-view {
+		display: block;
+		float: left; padding: 0;
+		li {
+			@include inline-block;
+			&.display-title {
+				display: none;
+			}
+			float: left;
+			@include square(48px);
+			border-right: 1px solid #dfdfdf;
+			position: relative;
+			a {
+				@include square(24px);
+				text-indent: -9999em;
+				background: #000;
+				position: absolute;
+				top: 50%; left: 50%;
+				margin: -12px 0 0 -12px;
+				background: url("../img/ico-viewmode.png") no-repeat;
+				background-color: #cacaca;
+				&.active,
+				&:hover {
+					background-color: $color1;
+				}
+				i { display: none; }
+			}
+			&.grid a {
+				background-position: center 0;
+			}
+			&.list a {
+				background-position: center -24px;
+			}
+		}
+
+	}
+	// .nbrItemPage,
+	.woocommerce-ordering {
+		display: block;
+		float: left;
+		padding: 0 10px;
+		text-align: left;
+		height: 48px;
+		margin: 0 0;
+		@media (max-width: $screen-xs-max) {
+			& {
+				display: none;
+			}
+		}
+		label{line-height: 48px; margin: 0 5px 0 0;}
+		.orderby-wrap{
+			position: relative;
+			margin: 9px 0 0; padding: 0px;
+			@include border-radius(14px);
+			border: 1px solid #e9e9e9;
+			@include transition(all 0.2 ease-in);
+			display: inline-block; line-height: 28px;
+			select.orderby{
+				border: none;
+				appearance: none;
+				-o-appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				padding: 0px 10px;
+				background:#FFF;
+				min-width: 170px;
+				@include border-radius(14px); height:28px; line-height: 28px;
+			}
+			&:hover,
+			&:focus{
+				border-color: #CCC;
+			}
+			&:before{
+				position: absolute; content: ''; height: 5px; width: 9px; right: 10px; top: 12px;
+				background: url(../img/ico-drop.png) no-repeat left top;
+			}
+		}
+	}
+	.nbrItemPage {
+		.select, .selector1 {
+			select {
+				width: 65px;
+			}
+		}
+	}
+	.woocommerce-result-count{
+		display: inline-block; margin:14px 8px 0; float: right;
+		@media(max-width: $screen-xs-max){
+			display: none;
+		}
+	}
+	.woocommerce-pagination {
+		margin: 0;
+		height: 48px;
+		float: right;
+	}
+	.product-count {
+		display: none !important;
+	}
+	.showall {
+		display: none;
+	}
+}

@@ -1,0 +1,158 @@
+/*--------------------------------------------------
+	[scss file: assets/scss/woo/woocommerce-smallscreen.scss]
+	This file scss from plugin WooCommerce
+		+ Optimises the default WooCommerce frontend layout when viewed on smaller screens.
+---------------------------------------------------*/
+
+// Imports
+//@import "bourbon";
+@import "mixins";
+@import "variables";
+
+// Style begins
+.woocommerce,
+.woocommerce-page {
+
+	table.shop_table_responsive {
+		thead {
+			display: none;
+		}
+
+		tbody {
+			tr:first-child {
+				td:first-child {
+					border-top: 0;
+				}
+			}
+
+			th {
+				display: none;
+			}
+		}
+
+		tr {
+			display: block;
+
+			td {
+				display: block;
+
+				&:before {
+					content: attr(data-title) ': ';
+					font-weight: 700;
+				}
+			}
+
+			&:nth-child(2n) {
+				td {
+					background-color: rgba(0,0,0,0.025);
+				}
+			}
+		}
+	}
+
+	table.my_account_orders {
+		tr {
+			td {
+				&.order-actions {
+					text-align: left;
+
+					&:before {
+						display: none;
+					}
+
+					.button {
+						float: none;
+						margin: .125em .25em .125em 0;
+					}
+				}
+			}
+		}
+	}
+
+	// General layout
+	.col2-set {
+		.col-1,
+		.col-2 {
+			float: none;
+			width: 100%;
+		}
+	}
+
+	// Products
+	ul.products {
+		li.product {
+		}
+	}
+
+	// Product Details
+	// Cart
+	 
+	table.cart,
+	#content table.cart {
+		.product-thumbnail {
+			
+		}
+
+		td.actions {
+			text-align: left;
+
+			.coupon {
+				@include clearfix();
+			}
+
+			input,
+			.button,
+			.input-text {
+				@include box-sizing(border-box);
+			}
+
+			.input-text + .button,
+			.button.alt {
+				float: right;
+			}
+		}
+	}
+
+	.cart-collaterals {
+		@include clearfix();
+		.cart_totals,
+		.shipping_calculator{
+		}
+		.cross-sells{}
+	}
+
+	
+	// Checkout
+	 
+	&.woocommerce-checkout {
+		form.login {
+			.form-row {
+				width: 100%;
+				float: none;
+			}
+		}
+	}
+
+	#payment {
+		.terms {
+			text-align: left;
+			padding: 0;
+		}
+
+		#place_order {
+			float: none;
+			@include box-sizing(border-box);
+			margin-bottom: 1em;
+		}
+	}
+
+	// Account
+	.lost_reset_password {
+		.form-row-first,
+		.form-row-last {
+			width: 100%;
+			float: none;
+			margin-right: 0;
+		}
+	}
+}
