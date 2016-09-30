@@ -1,6 +1,6 @@
 # Documentation: https://roots.io/trellis/docs/mail/
-mail_smtp_server: smtp.philipmoniaga.xyz:587
-mail_admin: admin@example.com
-mail_hostname: philipmoniaga.xyz
-mail_user: smtp_user
+mail_smtp_server: smtp-relay.gmail.com:587
+mail_admin: info@magnagc.store
+mail_hostname: magnagc.store
+mail_user: info@magnagc.store
 mail_password: "{{ vault_mail_password }}" # Define this variable in group_vars/all/vault.yml
