@@ -47,7 +47,10 @@
     "wpackagist-plugin/yith-woocommerce-compare": "*",
     "wpackagist-plugin/yith-woocommerce-quick-view": "*",
     "wpackagist-plugin/yith-woocommerce-wishlist": "*",
-    "wpackagist-plugin/redux-framework": "*"
+    "wpackagist-plugin/redux-framework": "*",
+    "wpackagist-plugin/easy-wp-smtp": "*",
+    "wpackagist-plugin/nav-menu-images": "*",
+    "wpackagist-plugin/updraftplus": "*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
